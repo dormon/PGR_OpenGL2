@@ -1,0 +1,79 @@
+\setbeamercolor{background canvas}{bg=fitblue}
+\begin{frame}
+\frametitle{Duální kvaterniony}
+\begin{center}
+\Huge {\color{white} Duální kvaterniony}
+\end{center}
+\end{frame}
+\setbeamercolor{background canvas}{bg=white}
+
+
+\begin{frame}
+\frametitle{Úvod}
+	\begin{itemize}
+	\item Matice lze použí pro mnoho druhů transformací: rotace, posuny, měřítko, projekci, ...
+  \item Kvaternion lze použí pro rotace, posun je potřeba udělat separátně
+  \item Eulerovy úhly lze použí pro rotace, posun je potřeba udělat separátně
+  \item Úhel+osa lze použít pro rotace, posun je potřeba udělat separátně
+  \item Duální kvaternion: umožňují rotace a posun
+  \item Vhodné pro pohyb rigidních těles: posuny+rotace
+  \item Jednotná reprezentace
+  \item Kombinuje koncept kvaternionů a duálních čísel
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Duální čísla}
+	\begin{itemize}
+	\item Podobné komplexním číslům.
+  \item Komplexní číslo: $c = r+b \cdot i$, $r$ reálná část, $b$ imaginární část, $i^2 = -1$.
+  \item Duální číslo: $z = r + d \cdot \epsilon$, $r$ reálná část, $d$ duální část, $\epsilon^2 = 0, \epsilon \neq 0$
+  \item $\epsilon$ je duální operátor.
+  \item Sčítání: $(r_a + d_a \cdot \epsilon) + (r_b + d_b \cdot \epsilon) = (r_a + r_b) + (d_a + d_b) \cdot \epsilon$
+  \item Násobení: $(r_a + d_a \cdot \epsilon) \cdot (r_b + d_b \cdot \epsilon) = r_a \cdot r_b + (r_a \cdot d_b + d_a \cdot r_b) \cdot \epsilon $
+  \item Dělení: podobně jako komplexní čísla - pomocí sdružených čísel $(r + d \cdot \epsilon)^* = (r - d \cdot \epsilon)$
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Duální kvaterniony}
+	\begin{itemize}
+  \item Duální kvaterniony: dva kvaterniony, jeden reálný a druhý duální.
+  \item $\mathbf{q} = \mathbf{q}_r + \mathbf{q}_d \cdot \epsilon$
+  \item Násobení skalárem: $s \cdot \mathbf{q} = s \cdot \mathbf{q}_r + s \cdot \mathbf{q}_d \cdot \epsilon$
+  \item Sčítání: $\mathbf{q}_1 + \mathbf{q}_2  = (\mathbf{q}_{r1}+\mathbf{q}_{r2}) + (\mathbf{q}_{d1} + \mathbf{q}_{d2}) \cdot \epsilon$
+  \item Násobení: $\mathbf{q}_1 \cdot \mathbf{q}_2  = (\mathbf{q}_{r1} \cdot \mathbf{q}_{r2}) + (\mathbf{q}_{r1} \cdot \mathbf{q}_{d2} + \mathbf{q}_{d1} \cdot \mathbf{q}_{r2} ) \cdot \epsilon$
+  \item Konjugace: $\mathbf{q^*} = \mathbf{q}_{r}^* + \mathbf{q}_{d}^* \cdot \epsilon$
+  \item Velikost: $\left\lVert \mathbf{q} \right\rVert = \mathbf{q} \cdot \mathbf{q}^*$
+  \item Podmínky: $\left\lVert \mathbf{q} \right\rVert = 1$, $\mathbf{q}_r^* \cdot \mathbf{q}_d + \mathbf{q}_d^* \cdot \mathbf{q}_r = 0$
+  \item Pokud jsou podmínky splněny, duální kvaterniony reprezentují libovolnou rotaci a posun.
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Sestavení duálního kvaternion}
+	\begin{itemize}
+  \item Reálný kvaternion reprezentuje rotaci: $\mathbf{q}_r = \mathbf{r}$, $\mathbf{r}$ je kvaternion reprezentující rotaci.
+  \item Duální kvaternion reprezentuje polovinu rotace a posunu: $\mathbf{q}_d = \frac{1}{2} \cdot \mathbf{r} \cdot \mathbf{t}$.
+  \item $\mathbf{t}$ je kvaternion $\mathbf{t} = (0,\mathbf{t}_x,\mathbf{t}_y,\mathbf{t}_z)$.
+  \item Čistá rotace: $\mathbf{q}_r = \left(cos\left(\frac{\phi}{2}\right),\mathbf{n}_x \cdot sin\left(\frac{\phi}{2}\right),\mathbf{n}_y \cdot sin\left(\frac{\phi}{2}\right),\mathbf{n}_z \cdot sin\left(\frac{\phi}{2}\right),0,0,0,0\right)$
+  \item Čistý posun: $\mathbf{q}_t = \left(1,0,0,0,0,\frac{\mathbf{t}_x}{2},\frac{\mathbf{t}_y}{2},\frac{\mathbf{t}_z}{2}\right)$
+  \item Rotace pak transformace: $\mathbf{q} = \mathbf{q}_t \times \mathbf{q}_r$
+  \item Transformování bodu: $\mathbf{p}' = \mathbf{q} \cdot \mathbf{p} \cdot \mathbf{q}^*$
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Vlastnosti}
+	\begin{itemize}
+  \item Kombinování matic 4x4: 64 násobení, 48 sčítání
+  \item Kombinování matic 4x3: 48 násobání, 32 sčítání
+  \item Kombinování duálních kvaternionů: 42 násobení, 38 sčítání
+  \item Je nutné zachovat jednotkové velikost a pořadí (stejné jako u matic)
+  \item Je možné interpolovat (stejně jako kvaterniony)
+  \item Nejsou singularity (gimbal lock)
+  \item Jednotná reprezentace
+  \item Nejkratší cesta interpolace
+  \item Další čtení: \textbf{Ben Kenwright: A Beginners Guide to Dual-Quaternions}
+	\end{itemize}
+\end{frame}
