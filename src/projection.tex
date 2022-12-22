@@ -1,17 +1,17 @@
 \setbeamercolor{background canvas}{bg=fitblue}
 \begin{frame}
-\frametitle{Projekce}
+\frametitle{Projection / Projekce}
 \begin{center}
-\Huge {\color{white}Projekce}
+\Huge {\color{white}Projection / Projekce}
 \end{center}
 \end{frame}
 \setbeamercolor{background canvas}{bg=white}
 
-\begin{frame}
-\frametitle{Ortogonální projekce}
+\begin{frame}\frametitle{Orthographics projection / Ortogonální projekce}
+In case of orthographics projection, view-volume has shape of a block.
+There se six parameters: l,r,b,t,n,f (left, right, bottom, top, near, far).\\
 U ortogonální projekce je tvar pohledového tělesa kvádr.
 Kvádr má 6 parametrů: l (left),r (right),b (bottom),t (top),n (near),f (far).
-Kvádr je umístěn relativně ke středu souřadného systému.
 \begin{figure}[htb]
 	\includegraphics[height=4cm,keepaspectratio]{pics/projection/ortho}
 	\includegraphics[height=4cm,keepaspectratio]{pics/projection/ndc}
@@ -19,14 +19,14 @@ Kvádr je umístěn relativně ke středu souřadného systému.
 \end{frame}
 
 \begin{frame}
-\frametitle{Ortogonální projekce}
+\frametitle{Orthographic projection / Ortogonální projekce}
 \begin{figure}[htb]
 	\includegraphics[height=4cm,keepaspectratio]{pics/projection/fromortho}
 \end{figure}
 \end{frame}
 
 \begin{frame}
-\frametitle{Ortogonální projekce}
+\frametitle{Orthographic projection / Ortogonální projekce}
 \begin{multicols}{3}
 {\tiny
 \begin{eqnarray*}
@@ -68,7 +68,7 @@ Kvádr je umístěn relativně ke středu souřadného systému.
 \end{frame}
 
 \begin{frame}
-\frametitle{Ortogonální projekce}
+\frametitle{Orthographic projection / Ortogonální projekce}
 $$
 \left[
 \begin{array}{cccc} 
@@ -138,7 +138,9 @@ $$
 \end{frame}
 
 \begin{frame}
-\frametitle{Perspektivní projekce}
+\frametitle{Perspective projection / Perspektivní projekce}
+View-volume of perspective projection has a shape of frustum - view-frustum.
+There are also six parameters: l,r,b,t,n,f.\\
 U perspektivní projekce je tvar pohledového tělesa komolý jehlan.
 Stejně jako u Ortogonální projekce má 6 parametrů: l (left),r (right),b (bottom),t (top),n (near),f (far).
 Jehlan je umístěn relativně ke středu systému.
@@ -149,14 +151,14 @@ Jehlan je umístěn relativně ke středu systému.
 \end{frame}
 
 \begin{frame}
-\frametitle{Perspektivní projekce}
+\frametitle{Perspective projection / Perspektivní projekce}
 \begin{figure}[htb]
 	\includegraphics[height=5cm,keepaspectratio]{pics/projection/frompers}
 \end{figure}
 \end{frame}
 
 \begin{frame}
-\frametitle{Perspektivní projekce}
+\frametitle{Perspective projection / Perspektivní projekce}
 \begin{multicols}{2}
 {\tiny
 \begin{eqnarray*}
@@ -196,7 +198,7 @@ Jehlan je umístěn relativně ke středu systému.
 \end{frame}
 
 \begin{frame}
-\frametitle{Perspektivní projekce, problém se z}
+\frametitle{Problem with z / Poblém se z}
 \begin{multicols}{2}
 {\tiny
 \begin{eqnarray*}
@@ -229,7 +231,7 @@ Jehlan je umístěn relativně ke středu systému.
 \end{frame}
 
 \begin{frame}
-\frametitle{Perspektivní projekce}
+\frametitle{Perspective projection / Perspektivní projekce}
 {\tiny
 \begin{equation}
 \label{eq:swap}
@@ -264,7 +266,7 @@ z
 \end{frame}
 
 \begin{frame}
-\frametitle{Perspektivní projekce}
+\frametitle{Perspective projection / Perspektivní projekce}
 {\tiny
 \begin{equation}
 \label{eq:persmat1}
@@ -299,8 +301,8 @@ z
 \end{frame}
 
 \begin{frame}
-\frametitle{Perspektivní projekce}
-Matice pro prohození $z$ a $w$ složky v homogenních souřadnicích:
+\frametitle{Perspective projection / Perspektivní projekce}
+The matrix after $z$ and $w$ replacement. / Matice pro prohození $z$ a $w$ složky v homogenních souřadnicích:
 {\tiny
 \begin{equation}
 \left[
@@ -334,7 +336,7 @@ Matice pro prohození $z$ a $w$ složky v homogenních souřadnicích:
 \end{frame}
 
 \begin{frame}
-\frametitle{Perspektivní projekce}
+\frametitle{Perspective projection / Perspektivní projekce}
 {\tiny
 \begin{equation}
 \left[

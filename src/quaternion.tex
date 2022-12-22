@@ -1,15 +1,20 @@
 \setbeamercolor{background canvas}{bg=fitblue}
 \begin{frame}
-\frametitle{kvaterniony}
+\frametitle{Quaternions / Kvaterniony}
 \begin{center}
-\Huge {\color{white}Kvaterniony}
+\Huge {\color{white}Quaternions / Kvaterniony}
 \end{center}
 \end{frame}
 \setbeamercolor{background canvas}{bg=white}
 
 
-\begin{frame}
-\frametitle{Úvod}
+\begin{frame}\frametitle{Introduction / Úvod}\scriptsize
+	\begin{itemize}
+	\item Quaternion is extension of complex numbers into fourth dimension.
+	\item Quaternion: $p=(a,b,c,d)$, $a$ is scalar/real part, $(b,c,d)$ is imaginary part.
+	\item Quaternion: $(0,b,c,d)$ pure imaginary quaternion.
+	\item Quaternion is constructed using Cayley-Dickson construction.
+	\end{itemize}
 	\begin{itemize}
 	\item Kvaternion je rozšířením komplexních čísel do čtvrté dimenze.
 	\item Kvaternion: $p=(a,b,c,d)$, $a$ je skalární část, $(b,c,d)$ je imaginární část.
@@ -18,8 +23,14 @@
 	\end{itemize}
 \end{frame}
 
-\begin{frame}
-\frametitle{Cayley-Dickson}
+\begin{frame}\frametitle{Cayley-Dickson}\scriptsize
+	\begin{itemize}
+	\item Cayley-Dickson generalized construction of hypercomplex numbers.
+	\item Construction produces algebras built on real numbers.
+	\item Every algebra has $2\times$ higher dimension.
+	\item With growing dimension, some properties are lost: commutativity, associativity, ...
+	\item The construction begins at $\mathbb{R}$.
+	\end{itemize}
 	\begin{itemize}
 	\item Cayley-Dickson zobecňuje postup konstrukce hyperkomplexních čísel.
 	\item Konstrukce produkuje algebry nad reálnými čísly.
@@ -29,8 +40,11 @@
 	\end{itemize}
 \end{frame}
 
-\begin{frame}
-\frametitle{Cayley-Dickson - komplexní čísla}
+\begin{frame}\frametitle{Cayley-Dickson - complex numbers / komplexní čísla}\scriptsize
+	\begin{itemize}
+	\item A tuple of two real numbers $(a,b)$ can be viewed as complex number.
+	\item For two complex numbers $p=(a,b),q=(c,d)$, these operation are defined:
+	\end{itemize} 
 	\begin{itemize}
 	\item Dvojici reálných čísel $(a,b)$, lze uvažovat jako komplexní číslo.
 	\item Pro dvojici komplexních čísel $p=(a,b),q=(c,d)$ jsou definovány operace:
@@ -43,8 +57,12 @@ p^*&=&(a,b)^*=(a,-b)
 \end{eqnarray*}
 \end{frame}
 
-\begin{frame}
-\frametitle{Cayley-Dickson - Dvojice komplexních čísel}
+\begin{frame}\frametitle{Couple of complex numbers / dvojice komplexních čísel}\scriptsize
+	\begin{itemize}
+	\item A tuple of two complex numbers $(p,q)$ can be viewed as couple of coule of real numbers.
+	\item A couple of couple of real numbers $((a,b),(c,d))$ represents a quaternion.
+	\item For two quaterions $p=(a,b),q=(c,d)$, the operations of multiplication and conjugation are defined differently:
+	\end{itemize} 
 	\begin{itemize}
 	\item Dvojici komplexních čísel $(p,q)$ si můžeme představit jako dvojici dvojic reálných čísel.
 	\item Dvojice dvojic reálných čísel $((a,b),(c,d))$ označujeme jako kvaternion.
@@ -56,72 +74,111 @@ p^*&=&(a,b)^*=(a^*,-b)
 \end{eqnarray*}
 \end{frame}
 
-\begin{frame}
-\frametitle{Cayley-Dickson - Zobecnění}
-	\begin{itemize}
+\begin{frame}\frametitle{Cayley-Dickson - generalization / zobecnění}\scriptsize
+\begin{itemize}
+  \item Two hypercomplex numbers $p=(a,b),q=(c,d)$ are formed from hypercomplex components (in lower dimension).
+	\item Multiplication and conjugation are defined as follows:
+\end{itemize} 
+\begin{itemize}
 	\item Dvě hyperkomplexní čísla $p=(a,b),q=(c,d)$ jsou složena z hyperkomplexních komponent, které jsou v nižší dimenzi.
 	\item Násobení a konjugace jsou definovány následovně:
+\end{itemize} 
+
 \begin{eqnarray*}
 p\cdot q &=& (a,b) \cdot (c,d) = (ac-d^*b,da+bc^*)\\
 p^*&=&(a,b)^*=(a^*,-b)
 \end{eqnarray*}
+
+\begin{itemize}
+ \item If $a$ is real number: $a^*=a, a \in \mathbb{R}.$
+ \item Real numbers $\rightarrow$ complex numbers $\rightarrow$ quaternions $\rightarrow$ octonions, ...
+ \item The dimension grows by factor of $2$.
+\end{itemize} 
+\begin{itemize}
  \item V případě, že konjugujeme reálné číslo: $a^*=a, a \in \mathbb{R}.$
  \item Postupnou konstrukcí z reálných čísel vznikají nejprve komplexní čísla, pak kvaterniony, oktoniony, ...
  \item Každý s dimenzí $2\times$ větší než předcházející.
 \end{itemize} 
 \end{frame}
 
-\begin{frame}
-\frametitle{Kvaternion - značení}
+\begin{frame}\frametitle{Notation / Značení}\scriptsize
+\begin{itemize}
+\item Symbol $i$ is used to mark imaginary component of complex numbers.
+\item Components of quaternion $p=((a,b),(c,d))$ built using Cayley-Dickson construction are marked as follows:
+\end{itemize}
 \begin{itemize}
 \item U komplexních čísel používáme symbol $i$ pro označení komplexní části.
 \item U kvaternionů zkonstruovaných pomocí Cayley-Dickson konstrukce $p=((a,b),(c,d))$ označíme komponenty následovně:
+\end{itemize}
 \begin{eqnarray*}
 p &=& ((a,b),(c,d))\\
 p &=& ((a,bi),(c,di)j)\\
 p &=& ((a,bi,(cj,dij))\\
 p &=& a+bi+cj+dij
 \end{eqnarray*}
+\begin{itemize}
+\item If $ij=k$ then we have hybercomplex number: $a+bi+cj+dk$.
+\item There is scalar+vector notion of quaternion: $p=(s,\vec v)$.
+\end{itemize}
+
+\begin{itemize}
 \item Pokud označíme součin $ij=k$ vznikne hyperkomplexní číslo: $a+bi+cj+dk$.
 \item Další značení je pomocí skaláru a vektoru: $p=(s,\vec v)$.
 \end{itemize}
 \end{frame}
 
-\begin{frame}
-\frametitle{Sčítání kvaternionů}
+\begin{frame}\frametitle{Addition / Sčítání}\scriptsize
 \begin{itemize}
+\item Two quaternions $p=((a,b),(c,d)),q=((x,y),(z,w))$ can be added together as follows:
 \item Kvaterniony $p=((a,b),(c,d)),q=((x,y),(z,w))$ se sčítají po složkách:
+\end{itemize}
 \begin{eqnarray*}
 p+q &=& ((a,b),(c,d))+((x,y),(z,w))\\
 p+q &=& ((a,b)+(x,y),(c,d)+(z,w))\\
 p+q &=& ((a+x,b+y),(c+z,d+w))
 \end{eqnarray*}
+\begin{itemize}
+\item Quaterion addition is commutative and associative.
+\item Quaterion $((0,0),(0,0))$ represents identity for addition.
+\end{itemize}
+\begin{itemize}
 \item Sčítání kvaternionů je komutativní a asociativní.
 \item Kvaternion $((0,0),(0,0))$ představuje neutrální prvek ke sčítání.
 \end{itemize}
 \end{frame}
 
-\begin{frame}
-\frametitle{Konjugace kvaternionu}
+\begin{frame}\frametitle{Konjugace kvaternionu}\scriptsize
 \begin{itemize}
+\item Quaterion conjugation of quaterion $p=((a,b),(c,d))$:
 \item Konjugace kvaternionu $p=((a,b),(c,d))$:
+\end{itemize}
 \begin{eqnarray*}
 p^* &=& ((a,b),(c,d))^*\\
 p^* &=& ((a,b)^*,-(c,d))\\
 p^* &=& ((a^*,-b),(-c,-d))\\
 p^* &=& ((a,-b),(-c,-d))
 \end{eqnarray*}
+\begin{itemize}
+\item Vector notation: $p=(s,\vec v)$, $p^*=(s,-\vec v)$.
+\item Conjugation of multiplication is: $(p \cdot q)^*= q^* \cdot p^*$.
+\end{itemize}
+\begin{itemize}
 \item Při vektorovém zápisu $p=(s,\vec v)$, $p^*=(s,-\vec v)$.
 \item Pro konjugaci součinu kvaternionů platí: $(p \cdot q)^*= q^* \cdot p^*$.
 \end{itemize}
 \end{frame}
 
-\begin{frame}
-\frametitle{Násobení kvaternionů}
+\begin{frame}\frametitle{Multiplication / Násobení}\scriptsize
+\begin{itemize}
+\item Multiplication is not commutative: $p\cdot q \neq q \cdot p$.
+\item Multiplication is associative: $p\cdot(q\cdot r)=(p\cdot q)\cdot r$.
+\item Multiplication of quaternions acording Cayley-Dickson construction:
+\end{itemize}
 \begin{itemize}
 \item Násobení kvaternionů není komutativní $p\cdot q \neq q \cdot p$.
 \item Násobení kvaternionů je asociativní $p\cdot(q\cdot r)=(p\cdot q)\cdot r$.
 \item Násobení kvaternionů podle Cayley-Dickson konstrukce:
+\end{itemize}
 {\tiny
 \begin{eqnarray*}
 p\cdot q &=& ((a,b),(c,d))\cdot((x,y),(z,w))\\
@@ -133,28 +190,35 @@ p\cdot q &=& ((ax-yb,ya+bx)-(zc+dw,dz-wc),(za-bw,bz+wa)+(cx+yd,-yc+dx))\\
 p\cdot q &=& ((ax-by-cz-dw,ay+bx+cw-dz),(az-bw+cx+dy,aw+bz-cy+dx))
 \end{eqnarray*}
 }
-\end{itemize}
 \end{frame}
 
-\begin{frame}
-\frametitle{Násobení kvaternionů}
+\begin{frame}\frametitle{Multiplication / Násobení}\scriptsize
+
 \begin{itemize}
+\item Kvaterniony: $p=a+bi+cj+dk,q=x+yi+zj+wk$ can be multiplied together with following equality:
 \item Kvaterniony ve tvaru: $p=a+bi+cj+dk,q=x+yi+zj+wk$ mohou být násobeny po složkách při dodržení rovnosti:
+\end{itemize}
+
 $$i^2=j^2=k^2=ijk=-1$$
+
+\begin{itemize}
+\item For the equality can be derived other rules:
 \item Z rovnosti plynout další pravidla:
+\end{itemize}
+
 \begin{eqnarray*}
 ijk &=& -1\\
 iijk &=& -i\\
 -jk &=& -i\\
 jk &=& i
 \end{eqnarray*}
-\end{itemize}
 \end{frame}
 
-\begin{frame}
-\frametitle{Násobení kvaternionů}
+\begin{frame}\frametitle{Multiplication / Násobení}\scriptsize
 \begin{itemize}
+\item From the equality $i^2=j^2=k^2=ijk=-1$, the following table can be obtained by multiplication using $i,j,k$:
 \item Z rovnosti $i^2=j^2=k^2=ijk=-1$ můžeme pomocí násobení $i,j,k$ postupně obdržet tabulku:
+\end{itemize}
 \begin{table}
 \centering
 \begin{tabular}{ |l||l|l|l|l| }
@@ -172,24 +236,24 @@ k & k &  j & -i & -1 \\
 \hline
 \end{tabular}
 \end{table}
-\end{itemize}
 \end{frame}
 
-\begin{frame}
-\frametitle{Násobení kvaternionů}
+\begin{frame}\frametitle{Násobení kvaternionů}\scriptsize
 \begin{itemize}
+\item Quaternions in scalar+vector from: $p=(s_1,\vec u),q=(s_2,\vec v)$ can be multiplied using scalar and vector multiplication:
 \item Kvaterniony ve tvaru $p=(s_1,\vec u),q=(s_2,\vec v)$ lze vynásobit s pomocí skalárního a vektorového součinu:
+\end{itemize}
 \begin{eqnarray*}
 p\cdot q &=& (s_1,\vec u),q=(s_2,\vec v)\\
 p\cdot q &=& (s_1s_2-\vec u\cdot \vec v,\vec u \times \vec v + s_1\cdot \vec v + s_2 \cdot \vec u)
 \end{eqnarray*}
-\end{itemize}
 \end{frame}
 
-\begin{frame}
-\frametitle{Norma kvaternionů}
+\begin{frame}\frametitle{Quaternion norm / Norma kvaternionů}\scriptsize
 \begin{itemize}
-\item Norma kvaternionů $q=((a,b),(c,d))$ je definována jako odmocnina ze součinu kvaternionu $q$ a konjugovaného kvaternionu $q^*$:
+  \item Norm of quaterion $q=((a,b),(c,d))$ is defined as  $\sqrt{q \cdot q^*}$:
+  \item Norma kvaternionů $q=((a,b),(c,d))$ je definována jako odmocnina ze součinu kvaternionu $q$ a konjugovaného kvaternionu $q^*$:
+\end{itemize}
 \begin{eqnarray*}
 ||q|| &=& \sqrt{q \cdot q^*}\\
 ||q|| &=& \sqrt{((a,b),(c,d)) \cdot ((a,b),(c,d))^*}\\
@@ -199,11 +263,18 @@ p\cdot q &=& (s_1s_2-\vec u\cdot \vec v,\vec u \times \vec v + s_1\cdot \vec v +
 ||q|| &=& \sqrt{a^2+b^2+c^2+d^2}
 \end{eqnarray*}
 
-\end{itemize}
 \end{frame}
 
-\begin{frame}
-\frametitle{Vlastnosti kvaternionů}
+\begin{frame}\frametitle{Properties / Vlastnosti}\scriptsize
+\begin{itemize}
+\item Quaternions $p=(s_1,\vec u),q=(s_2,\vec v)$ are parallel if vectors $\vec u,\vec v$ are parallel.
+\item Quaternions $p,q$ are perpendicular if vector $\vec u,\vec v$ are perpendicular.
+\item Multiplication $p \cdot q$ of two pure vector quaternions $p=(0,\vec u),q=(0,\vec v)$ is pure vector quaternion $(0,\vec u \times \vec v)$ only if they are perpendicular.
+\item Quaternion $p=(0,(0,0,0))$ is identity for addition.
+\item Quaternoin $e=(1,(0,0,0))$ is identity for multiplication. For any $p$: $e\cdot p=p \cdot e = p$.
+\item Inverse quaterion of $p$ for multiplication is quaterbuib $p^{-1}$, for which: $p\cdot p^{-1}=p^{-1}\cdot p=e$, $p\cdot p^*=||p||^2$, $p\cdot \frac{p^{*}}{||p||^2}=e,p^{-1}=\frac{p^*}{||p||^2}$.
+\end{itemize}
+
 \begin{itemize}
 \item
 Kvaterniony $p=(s_1,\vec u),q=(s_2,\vec v)$ jsou rovnoběžné v případě, že vektory $\vec u,\vec v$ jsou na sebe rovnoběžné.
@@ -223,8 +294,14 @@ Odtud $p\cdot \frac{p^{*}}{||p||^2}=e,p^{-1}=\frac{p^*}{||p||^2}$.
 \end{itemize}
 \end{frame}
 
-\begin{frame}
-\frametitle{Rotace - Eulerovy úhly}
+\begin{frame}\frametitle{Rotace - Eulerovy úhly}\scriptsize
+\begin{itemize}
+\item Rotation in 3D space can be represented using three angles -- Euler angles.
+\item Euler angles $\alpha,\beta,\gamma$ are used for three perpendicular exes.
+\item Euler angles are closelly related to gimbal.
+\item Gimbal lock -- loss of degree of freedom.
+\item Quaternions do not suffer from gimbal lock.
+\end{itemize}
 \begin{itemize}
 \item Rotace v 3D může být reprezentována pomocí tří úhlů - Eulerovy úhly.
 \item Eulerovy úhly $\alpha,\beta,\gamma$ jsou použity pro tři na sebe kolmé osy.
@@ -234,8 +311,15 @@ Odtud $p\cdot \frac{p^{*}}{||p||^2}=e,p^{-1}=\frac{p^*}{||p||^2}$.
 \end{itemize}
 \end{frame}
 
-\begin{frame}
-\frametitle{Rotace - Kvaterniony}
+\begin{frame}\frametitle{Rotation / Rotace}\scriptsize
+\begin{itemize}
+\item Quaternion represents rotation as rotation around certaion exis using some angle.
+\item Only unit quaternions are used for rotation: $||p||=1$.
+\item Any unit quaternion can be written as: $(cos(\alpha),sin(\alpha)\cdot \vec v)$.
+\item The angle is in range: $\alpha \in [0,\pi]$ and the vector is unit vector: $|\vec v|=1$.
+\item If the angle is: $\alpha=0,\pi$, quaternion is: $((\pm 1,0),(0,0))$ -- identity.
+\end{itemize}
+
 \begin{itemize}
 \item Kvaternion reprezentuje rotaci jako rotaci kolem určité osy o určitý úhel.
 \item Pro rotaci pomocí kvaternionů se používají jednotkové kvaterniony $||p||=1$.
@@ -246,8 +330,15 @@ Odtud $p\cdot \frac{p^{*}}{||p||^2}=e,p^{-1}=\frac{p^*}{||p||^2}$.
 \end{itemize}
 \end{frame}
 
-\begin{frame}
-\frametitle{Rotace - Kvaterniony}
+\begin{frame}\frametitle{Rotation / Rotace}\scriptsize
+\begin{itemize}
+\item A point $r=(r_1,r_2,r_3)$, has to be converted to pure vector quaternion $p=((0,r_1),(r_2,r_3))$, if we want to rotate it.
+\item Axis of rotation represented as unit vector $\vec v$, and angle $\alpha$ has to be converted to unit quaternion: $q=(cos(\frac{\alpha}{2}),sin(\frac{\alpha}{2})\cdot\vec v)$.
+\item The rotation of point $r$ around axis $v$ using angle $\alpha$:
+$$q\cdot p \cdot q^*=p'$$
+\item $p'$ is rotated point.
+\end{itemize}
+
 \begin{itemize}
 \item Bod $r=(r_1,r_2,r_3)$, který chceme rotovat převedeme na ryzí kvaternion: $p=((0,r_1),(r_2,r_3))$.
 \item Osu, reprezentovanou pomocí jednotkového vektoru $\vec v$, a úhel $\alpha$, převedeme na jednotkový kvaternion: $q=(cos(\frac{\alpha}{2}),sin(\frac{\alpha}{2})\cdot\vec v)$.
@@ -257,12 +348,19 @@ $$q\cdot p \cdot q^*=p'$$
 \end{itemize}
 \end{frame}
 
-\begin{frame}
-\frametitle{Skládání rotací}
+\begin{frame}\frametitle{Composition of rotations / Skládání rotací}\scriptsize
+\begin{itemize}
+\item Quaterion: $p=((0,r_1),(r_2,r_3))$ represents bod that we want to rotate.
+\item Unit quaternions: $q,t$ represents two rotations.
+\item Application of both rotations:
+\end{itemize}
+
 \begin{itemize}
 \item Kvaternion: $p=((0,r_1),(r_2,r_3))$ reprezentuje bod, který chceme rotovat.
 \item Jednotkové kvaterniony: $q,t$ reprezentují dvě rotace.
 \item Aplikování rotací:
+\end{itemize}
+
 \begin{eqnarray*}
 p' &=& t\cdot (q\cdot p \cdot q^*)\cdot t^*\\
 p' &=& t\cdot q\cdot p \cdot q^*\cdot t^*\\
@@ -270,14 +368,18 @@ p' &=& (t\cdot q)\cdot p \cdot (q^*\cdot t^*)\\
 p' &=& (t\cdot q)\cdot p \cdot (t \cdot q)^*\\
 p' &=& s \cdot p \cdot s^*
 \end{eqnarray*}
+
+\begin{itemize}
+\item Composition of $q,t$ forms new quaterion $s=q\cdot t$ that represents both rotations.
 \item Složení rotací $q,t$ vznikne kvaternion $s=q\cdot t$, který reprezentuje obě rotace.
 \end{itemize}
 \end{frame}
 
-\begin{frame}
-\frametitle{Převod kvaternionu na rotační matici}
+\begin{frame}\frametitle{Conversion to matrices / Převod na rotační matici}\scriptsize
 \begin{itemize}
+\item Conversion of unit quaterion $(\cos(\frac{\alpha}{2}),\sin(\frac{\alpha}{2})\vec v)$ to rotation matrix:
 \item Převod jednotkového kvaternionu $(\cos(\frac{\alpha}{2}),\sin(\frac{\alpha}{2})\vec v)$ na rotační matici:
+\end{itemize}
 {\tiny
 $$
 \left[
@@ -289,6 +391,5 @@ v_zv_x(1-\cos(\alpha))-v_y\sin(\alpha) & v_zv_y(1-\cos(\alpha))+v_x\sin(\alpha) 
 \right]
 $$
 }
-\end{itemize}
 \end{frame}
 
